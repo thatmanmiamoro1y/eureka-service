@@ -1,3 +1,3 @@
 spring:
   application:
-    name: eurka-service
+    name: eureka-service

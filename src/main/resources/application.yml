@@ -1,14 +1,13 @@
-# 端口配置
+
 server:
   port: 8000
 
 spring:
   security:
     user:
-      name: thatman
-      password: miamoro1y
+      name: thatman-eureka
+      password: miamoro1y-eureka
 
-# eureka配置
 eureka:
   client:
     registerWithEureka: false
@@ -16,7 +15,7 @@ eureka:
     serviceUrl:
       defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:${server.port}/eureka/
   instance:
-    hostname: eurka-service
+    hostname: eureka-service
     prefer-ip-address: true
   server:
     enable-self-preservation: false
