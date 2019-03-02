@@ -1,0 +1,24 @@
+# 端口配置
+server:
+  port: 8000
+
+spring:
+  security:
+    user:
+      name: thatman
+      password: miamoro1y
+
+# eureka配置
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:${server.port}/eureka/
+  instance:
+    hostname: eurka-service
+    prefer-ip-address: true
+  server:
+    enable-self-preservation: false
+
+
