@@ -1,3 +1,22 @@
+server:
+  port: 8000
 spring:
   application:
     name: eureka-service
+  security:
+    user:
+      name: thatman-eureka
+      password: miamoro1y-eureka
+
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@localhost:${server.port}/eureka/
+  instance:
+    hostname: eureka-service
+    prefer-ip-address: true
+  server:
+    enable-self-preservation: false
