@@ -16,9 +16,11 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@localhost:${server.port}${server.servlet.context-path}/
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${spring.cloud.client.ip-address}:${server.port}${server.servlet.context-path}/eureka/
   instance:
-    hostname: localhost
+    hostname: eureka-service
+    #指定ip,默认去本地ip
+#   ip-address: locahost
     prefer-ip-address: true
   server:
     enable-self-preservation: false
